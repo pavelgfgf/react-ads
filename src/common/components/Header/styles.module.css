@@ -1,0 +1,54 @@
+.navbar {
+    background-color: #292929;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 14px;
+    transition: color 0.5s ease;
+}
+
+.navbar a:hover {
+    color: #f86163;
+}
+
+.navbar .left_menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .right_menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .icon {
+    color: gray;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.navbar .login {
+    color: white;
+    margin-right: 15px;
+}
+
+.navbar .post_ad {
+    background-color: #009cff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 13px;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+.navbar .post_ad:hover {
+    background-color: #0080d1;
+}
