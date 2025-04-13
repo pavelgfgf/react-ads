@@ -2,7 +2,7 @@ import { host } from "../const"
 import { login } from "./login"
 
 export const register = async (email, password) => {
-    await fetch(`${host}/register`, {
+    await fetch(`${host}/registration`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -1,7 +1,14 @@
 import React from "react";
 import s from './styles.module.css'
+import { useNavigate } from "react-router";
 
 const Header = () => {
+    const navitage = useNavigate()
+
+    const handleClick = () => {
+        navitage(`/ads`)
+    }
+
     return (
         <>
             <header>
@@ -18,7 +25,7 @@ const Header = () => {
                             <a href="">❤</a>
                             <a href="">🛒</a>
                             <a href="/login" className={s.login}>Войти и зарегистрироваться</a>
-                            <button className={s.post_ad}>Разместить объявление</button>
+                            <button className={s.post_ad} onClick={handleClick}>Разместить объявление</button>
                         </nav>
                     </div>
                 </div>

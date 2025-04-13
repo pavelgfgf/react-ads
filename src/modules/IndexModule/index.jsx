@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import s from './styles.module.css'
 import Header from "../../common/components/Header";
+import { getAds } from "../../api/ads/ads";
 
 const IndexModule = () => {
+    const [ads, setAds] = useState([])
+
+    useEffect(() => {
+        getAds().then((data) => {
+            setAds(data)
+        })
+    }, [])
     return (
         <>
             <Header />
@@ -14,19 +22,37 @@ const IndexModule = () => {
                     <input type="text" placeholder="Поиск по объявлениям" />
                     <button className={s.search_bth}>Найти</button>
                 </div>
-                
-                </section>
 
-                <div className={s.categories}>
-                    <a href=""><span>🧥 Одежда и обувь</span></a>
-                    <a href=""><span>🏡 Жильё для поездки</span></a>
-                    <a href=""><span>🛍️ Молл</span></a>
-                    <a href=""><span>🚗 Новые авто</span></a>
-                    <a href=""><span>✂️ Услуги для красоты</span></a>
-                    <a href=""><span>🚗 Гараж</span></a>
+            </section>
+
+            <div className={s.categories}>
+                <a href=""><span>🧥 Одежда и обувь</span></a>
+                <a href=""><span>🏡 Жильё для поездки</span></a>
+                <a href=""><span>🛍️ Молл</span></a>
+                <a href=""><span>🚗 Новые авто</span></a>
+                <a href=""><span>✂️ Услуги для красоты</span></a>
+                <a href=""><span>🚗 Гараж</span></a>
+            </div>
+
+            <div className={s.ads_container}>
+                <h1 className={s.ads_title}>Список объявлений</h1>
+                <div className={s.ads_grid}>
+                    {ads.map((ad) => (
+                        <div key={ad.id} className={s.ad_card}>
+                            <img
+                                src={`https://picsum.photos/seed/${ad.id}/1000/500`}
+                                alt="Превью"
+                                className={s.ad_image}
+                            />
+                            <h2 className={s.ad_title}>{ad.name}</h2>
+                            <p className={s.ad_description}>{ad.description}</p>
+                            <p className={s.ad_price}>{ad.price} у.е</p>
+                            <button className={s.ad_btn}>Подробнее</button>
+                        </div>
+                    ))}
+
                 </div>
-            
-        
+            </div>
         </>
     );
 };

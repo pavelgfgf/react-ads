@@ -1,0 +1,57 @@
+.form_container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.title, .description, .price, image{
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.title_inp, .price_inp, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+input[type="file"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn_public {
+    background-color: #009cff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.5s ease;
+}
+
+.btn_public:hover {
+    background-color: #0080d1;
+}
