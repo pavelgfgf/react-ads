@@ -16,3 +16,14 @@ export const setAds = async (form_data) => {
     console.log(JSON.stringify(data));
     return data
 }
+
+export const deleteAd = async (id) => {
+    const token = localStorage.getItem("token");
+
+    await fetch(`${host}/ads/${id}`, {
+        method: 'DELETE',
+        headers: {
+            Authorization: `Bearer ${token}`,
+        }
+    })
+}

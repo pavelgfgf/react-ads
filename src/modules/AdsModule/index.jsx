@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import s from './styles.module.css'
 import { setAds } from "../../api/ads/ads";
-import { useNavigate } from "react-router";
+// import { useNavigate } from "react-router";
 
 const AdsModule = () => {
     const [data, setData] = useState({
@@ -10,11 +10,18 @@ const AdsModule = () => {
         price: "1",
         image: "",
     });
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     // const handleNavigate = () => {
     //     navigate('/')
     // }
+
+    const handleChangeName = (e) => {
+        setData((prev) => ({...prev, name:e.target.value}))
+    }
+
+    console.log(data);
+    
     const handleChangeImage = (e) => {
         setData((prev) => ({...prev, image:e.target.files[0]}))
     } 
@@ -48,7 +55,7 @@ const AdsModule = () => {
                         className={s.title_inp}
                         placeholder="Введите название объявления"
                         required
-
+                        onChange={handleChangeName}
                     />
 
                     <label className={s.description}>Описание</label>

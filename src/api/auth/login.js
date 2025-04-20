@@ -1,8 +1,7 @@
 import { host } from "../const"
 
-
 export const login = async (email, password) => {
-    const response = await fetch(`${host}/auth`, {
+    const response = await fetch(`${host}/login/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
