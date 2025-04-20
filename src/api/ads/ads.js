@@ -6,14 +6,13 @@ export const getAds = async () => {
     return data
 }
 
-export const setAds = async (name, description, price, image) => {
+
+export const setAds = async (form_data) => {
     const response = await fetch(`${host}/ads`, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ name, description, price, image})
+        body: form_data
     })
     const data = await response.json()
+    console.log(JSON.stringify(data));
     return data
 }

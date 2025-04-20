@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import s from './styles.module.css'
 import Header from "../../common/components/Header";
 import { getAds } from "../../api/ads/ads";
+import { hostBase } from "../../api/const";
 
 const IndexModule = () => {
     const [ads, setAds] = useState([])
@@ -39,11 +40,7 @@ const IndexModule = () => {
                 <div className={s.ads_grid}>
                     {ads.map((ad) => (
                         <div key={ad.id} className={s.ad_card}>
-                            <img
-                                src={`https://picsum.photos/seed/${ad.id}/1000/500`}
-                                alt="Превью"
-                                className={s.ad_image}
-                            />
+                            <img alt="Превью" className={s.ad_image} src={`${hostBase}${ad.image}`} />
                             <h2 className={s.ad_title}>{ad.name}</h2>
                             <p className={s.ad_description}>{ad.description}</p>
                             <p className={s.ad_price}>{ad.price} у.е</p>
